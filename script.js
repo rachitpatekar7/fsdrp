@@ -84,3 +84,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function validatePhone() {
+    var phoneInput = document.getElementById('phone');
+    var phoneValue = phoneInput.value;
+    var numericValue = phoneValue.replace(/\D/g, '');
+
+    if (numericValue.length > 10) {
+        numericValue = numericValue.substring(0, 10);
+    }
+
+    phoneInput.value = numericValue;
+
+    if (numericValue.length !== 10) {
+        phoneInput.setCustomValidity('Phone number must be exactly 10 digits.');
+    } else {
+        phoneInput.setCustomValidity('');
+    }
+}
+
+function validateName() {
+    var nameInput = document.getElementById('username');
+    var nameValue = nameInput.value;
+    var lettersOnly = nameValue.replace(/[^a-zA-Z\s]/g, '');
+
+    nameInput.value = lettersOnly;
+
+    if (lettersOnly.length === 0) {
+        nameInput.setCustomValidity('Name must contain only letters.');
+    } else {
+        nameInput.setCustomValidity('');
+    }
+}

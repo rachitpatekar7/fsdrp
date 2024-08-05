@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Contact Me</title>
+    <title>Form</title>
 </head>
 <body>
     <main class="container mt-4">
         <div class="main">
-            <h1>Student Registration</h1>
+            <h1>form</h1>
             <form id="registrationForm">
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" class="form-control" required>
+                    <label for="username">Name:</label>
+                    <input type="text" id="username" name="username" class="form-control" onchange="validateName()" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -22,20 +22,18 @@
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="text" id="phone" name="phone" class="form-control">
+                    <input type="text" id="phone" name="phone" class="form-control" onchange="validatePhone()" maxlength="10">
                 </div>
                 <div class="form-group">
                     <label for="state">State:</label>
                     <select id="state" name="state" class="form-control" required>
                         <option value="" disabled selected>Select a state</option>
-                        <!-- States options will be populated by JavaScript -->
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="city">City:</label>
                     <select id="city" name="city" class="form-control" required>
                         <option value="" disabled selected>Select a city</option>
-                        <!-- Cities options will be populated based on selected state -->
                     </select>
                 </div>
                 <div class="form-group">
