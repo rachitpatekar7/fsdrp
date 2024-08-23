@@ -1,0 +1,22 @@
+body {
+    background-color: #343a40; 
+    color: #ffffff; 
+}
+
+.form-control, .btn {
+    background-color: #495057; 
+    color: #ffffff; 
+}
+
+.form-control::placeholder {
+    color: #ced4da; 
+}
+
+.btn-light {
+    background-color: #6c757d;
+    color: #ffffff;
+}
+
+.btn-light:hover {
+    background-color: #5a6268;
+}
