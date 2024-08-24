@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
         'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik'],
         'Goa': ['Panaji', 'Vasco', 'Margao', 'Mapusa'],
         'Kashmir': ['Srinagar', 'Jammu', 'Anantnag', 'Baramulla'],
-        
     };
 
     const stateSelect = document.getElementById('state');
     const citySelect = document.getElementById('city');
-
 
     for (const state in states) {
         const option = document.createElement('option');
@@ -17,12 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         stateSelect.appendChild(option);
     }
 
- 
     stateSelect.addEventListener('change', function() {
         const selectedState = this.value;
         const cities = states[selectedState] || [];
         
-        citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>'; // Reset city dropdown
+        citySelect.innerHTML = '<option value="" disabled selected>Select a city</option>';
         cities.forEach(city => {
             const option = document.createElement('option');
             option.value = city;
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('registrationForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-      
         const username = document.getElementById('username').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const state = document.getElementById('state').value;
         const city = document.getElementById('city').value;
 
-        
         const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,3}$/;
         const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[&$#@]).{7,}$/;
         const phoneRegex = /^\d{10}$/;
@@ -78,9 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-      
         alert('Registration successful!');
-      
+        this.submit();
     });
 });
 
